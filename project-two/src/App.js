@@ -25,18 +25,8 @@ function App() {
             <Route path="/" element={ <ShowRoom /> }/>
 
             {/* 
-              Пизда бляяяяять
-              ну уёбок чисто 
-              еблан из-за которого я сосал меня ебали дважды
-              я то думаю почему ничего работает
-              ОКАЗЫВАЕТСЯ вместо component={<NewCars/>} 
-              НАДО БЫЛО ИСПОЛЬЗОВАТЬ element={<NewCars/>}
-
-              моё охуевшее ебало представили?
-
-              знаете у кого ещё было охуевшее лицо?
-              
-              у Майкла Джексона
+              component!={<NewCars/>} 
+              element={<NewCars/>}
             */}
             <Route path="/registerFrom" element={<RegisterForm />} />
             <Route path="/new" element={ <NewCars /> } />
