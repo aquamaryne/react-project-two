@@ -19,11 +19,11 @@ export default function CarsPage(){
        <Grid container spacing={2}  className="pb-32">
             {cars.map((car) => (
                 <Grid item xs={12} sm={6} md={4} key={car.id} className="pb-1">
-                    <Card className="w-full flex mx-4 my-8 dark:bg-white shadow rounded-md ml-8" sx={{ maxWidth: '100rem'}}>
+                    <Card className="w-full flex mx-4 my-8 dark:bg-white shadow rounded-md ml-8" sx={{ maxHeight: 1500}} >
                         <CardMedia 
                             component="img"
                             src={car.Images}
-                            className="static w-full h-56 object-cover"
+                            className="static w-full h-full object-cover"
                         />
                         <Box className="px-6 py-4 w-full">
                             <Typography className="font-bold text-xl mb-2">Manufacture: {car.BrandName} </Typography>
@@ -34,10 +34,6 @@ export default function CarsPage(){
                                 <Typography> Car review: </Typography> 
                                 <Typography> Review about car (text) </Typography> 
                             </Box>
-                        </Box>
-                        <Box sx={{ mt:'1rem' }}>
-                            <Typography className="font-bold text-xl">Power: </Typography>
-                            <Typography className="font-bold text-xl">NM: </Typography>
                         </Box>
                     </Card> 
                 </Grid>

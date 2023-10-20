@@ -26,7 +26,8 @@ export default function NewCars(){
         let filteredCars = newCars;
     
         if (selectedYear !== "") {
-          filteredCars = filteredCars.filter((cars) => cars.Year === selectedYear);
+          filteredCars = filteredCars.filter(
+            (cars) => cars.Year === selectedYear);
         }
     
         if (selectedBrand !== "") {

@@ -13,10 +13,10 @@ app.get('/car_brands', async(req, res) => {
 
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows] = await connection.execute(`SELECT * FROM car_brands ORDER BY Name`);
@@ -33,10 +33,10 @@ app.get('/car_models', async(req, res) => {
 
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows] = await connection.execute(`SELECT id, Name FROM car_models ORDER BY Name`);
@@ -53,10 +53,10 @@ app.get('/cars/year', async(req, res) => {
 
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows] = await connection.execute(`SELECT DISTINCT Year FROM cars WHERE Year >= 1973 AND Year <= 2024 ORDER BY Year`);
@@ -73,10 +73,10 @@ app.get('/used_cars', async(req, res) => {
 
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows] = await connection.execute(`
@@ -99,10 +99,10 @@ app.get('/new_cars', async(req, res) => {
 
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows] = await connection.execute(`
@@ -126,10 +126,10 @@ app.get('/cars/:id', async(req, res) => {
   try{
     const id = req.params.id;
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
     
     const [rows] = await connection.query(`
@@ -149,10 +149,10 @@ app.get('/cars/:id', async(req, res) => {
 app.get('/show_room', async(req, res) => {
     try{
       const connection = await mysql.createConnection({
-        host: '',
-        user: '',
-        password: '',
-        database: ''
+        host: 'localhost',
+        user: 'root',
+        password: 'toor',
+        database: 'projectcars'
     });
 
     const[rows] = await connection.execute(`
@@ -172,10 +172,10 @@ app.post('/user_auth', async (req, res) => {
   
   try{
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
   });
 
   const{first_name, last_name, email, phone, password} = req.body;
@@ -196,10 +196,10 @@ app.get('/search/items:id', async(req, res) => {
   try{
       const search = req.params.id;
       const connection = await mysql.createConnection({
-        host: '',
-        user: '',
-        password: '',
-        database: ''
+        host: 'localhost',
+        user: 'root',
+        password: 'toor',
+        database: 'projectcars'
       });
       
       const query = `SELECT * FROM car_brands WHERE Name LIKE ${search}`;
@@ -222,10 +222,10 @@ app.get('/auto/brand', async(req, res) => {
   try{
     const search = req.query.search
     const connection = await mysql.createConnection({
-      host: '',
-      user: '',
-      password: '',
-      database: ''
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
     });
 
     const [rows]  = await connection.execute(`SELECT car_brands.Name AS BrandName, car_models.Name FROM car_brands
@@ -236,6 +236,24 @@ app.get('/auto/brand', async(req, res) => {
   } catch(err){
     console.log(err);
     res.status(500).send("Can't find any brand")
+  }
+});
+
+app.get('/car.components', async(req, res) => {
+  try{
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'toor',
+      database: 'projectcars'
+    });
+
+    const [rows] = await connection.execute(`SELECT * FROM car_components`);
+    res.status(200).send(rows);
+
+  } catch(err){
+    console.error(err);
+    res.status(500).send("Can't find parts for cars"); 
   }
 })
 

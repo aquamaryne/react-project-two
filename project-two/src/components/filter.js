@@ -45,10 +45,10 @@ export default function Filter({ onFilterChange }){
             <ul className="grid grid-cols-3 gap-4 px-8 ml-40 mr-60">
                 <li className="relative">
                     <label htmlFor="year" className="text-sm font-rubik text-white absolute top-1 left-2 transition-all duration-200 ease-in-out">
-                        Рік
+                        Year
                     </label>
                     <select value={selectedYear} onChange={handleYearChange} id="year" className="w-full h-16 rounded-md pt-2 pl-10 pr-3 py-2 bg-[#1f1f1f] text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 border-gray-300 transition-all duration-300 ease-in-out">
-                        <option value="">Оберіть рік</option>
+                        <option value="">Pick year</option>
                             {years.map(year => (
                                 <option key={year.id} value={year.name}>{year.Year}</option>
                             ))}
@@ -56,10 +56,10 @@ export default function Filter({ onFilterChange }){
                 </li>
                 <li className="relative">
                     <label htmlFor="mark" className="text-sm font-rubik text-white  absolute top-1 left-2 transition-all duration-200 ease-in-out">
-                        Марка
+                        Manufacture
                     </label>
                     <select value={selctedMark} onChange={handleBrandChange} id="mark" className="w-48 h-16 rounded-md pt-2 pl-10 pr-3 py-2 bg-[#1f1f1f] text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 border-gray-300 transition-all duration-300 ease-in-out">
-                        <option value="">Оберіть марку</option>
+                        <option value="">Pick manafacture</option>
                             {marks.map(mark => (
                                 <option key={mark.id} value={mark.name}>{mark.Name} </option>
                             ))}
@@ -67,10 +67,10 @@ export default function Filter({ onFilterChange }){
                 </li>
                 <li className="relative">
                     <label htmlFor="model" className="text-sm font-rubik text-white  absolute top-1 left-2 transition-all duration-200 ease-in-out">
-                        Модель
+                        Model
                     </label>
                     <select value={selectedModel} onChange={handleModelChange} id="model" className="w-48 h-16 rounded-md pt-2 pl-10 pr-3 py-2 bg-[#1f1f1f] text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 border-gray-300 transition-all duration-300 ease-in-out">
-                        <option value="">Оберіть модель</option>
+                        <option value="">Pick model</option>
                             {models.map(model => (
                                 <option key={model.id} value={model.name}>{model.Name}</option>
                             ))}
