@@ -239,7 +239,7 @@ app.get('/auto/brand', async(req, res) => {
   }
 });
 
-app.get('/car.components', async(req, res) => {
+app.get('/carComponents', async(req, res) => {
   try{
     const connection = await mysql.createConnection({
       host: 'localhost',
@@ -255,8 +255,27 @@ app.get('/car.components', async(req, res) => {
     console.error(err);
     res.status(500).send("Can't find parts for cars"); 
   }
-})
+});
 
+app.get('/ComponentApi/:id', async(req, res) => {
+  try{
+    const id = req.params.id;
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'root',
+      database: 'projectcars'
+    });
+
+    const [rows] = await connection.query(`
+                            SELECT id, name, price, image FROM car_components 
+                            WHERE id = ${id}`);
+    res.status(200).json(rows);
+  } catch(error){
+    console.error(error);
+    res.status(500).send("Can't take data")
+  }
+});
 app.listen(port, () => {
   console.log(`Server start on port ${port}`);
 });

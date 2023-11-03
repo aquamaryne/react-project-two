@@ -23,7 +23,7 @@ export default function Navbar(){
                             Вживані авто 
                         </Link>
                         <Link 
-                            to="/cars.components" 
+                            to="/carComponents" 
                             className="border border-[#023430] hover:border-gray-900 text-[#fdf6e3] hover:bg-[#fdf6e3d0] focus:bg-[#fdf6e3d0] transition duration-200 hover:text-[#1f1f1f] focus:text-[#1f1f1f] px-3 py-2 rounded-md text-sm font-medium"> 
                             Запчастини 
                         </Link>

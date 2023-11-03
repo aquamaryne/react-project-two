@@ -9,7 +9,8 @@ import ShowRoom from "./components/carsShowRoom";
 import Footer from "./components/footer";
 import Helmet from "react-helmet";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CarsComponents from "./components/cars.components";
+import CarsComponents from "./components/carComponents";
+import ComponentApi from "./components/componentsapi";
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
             <Route path="/registerFrom" element={<RegisterForm />} />
             <Route path="/new" element={ <NewCars /> } />
             <Route path="/used" element={ <UsedCars /> } />
-            <Route path="/cars.components" element={ <CarsComponents />} />
+            <Route path="/carComponents" element={ <CarsComponents />} />
             <Route path="/cars/:id" element={<CarsPage/>} />
+            <Route path="/componentsapi/:id" element={<ComponentApi />} />
           </Routes>
           <Footer />
       </Router>
